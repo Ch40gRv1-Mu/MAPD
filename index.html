@@ -9,9 +9,9 @@
 
   gtag('config', 'G-YN52D1BKK1');
 </script>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="shortcut icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="apple-touch-icon" href="./favicon.svg">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2144,6 +2144,28 @@ h1,h2,h3,.syn,.nav-logo,.foot-logo,.btn-gold,.btn-outline,.faq-q{
 }
 @media(hover:none) and (pointer:coarse){
   .news-card:hover,.read-action:hover,.hs:hover,.mq-logo-btn:hover{transform:none}
+}
+
+/* Mobile release safeguards */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-wrap:anywhere}
+.map-wrap.map-fullscreen{height:100dvh!important}
+@media(max-width:640px){
+  .nav{
+    height:calc(56px + env(safe-area-inset-top));
+    padding-top:env(safe-area-inset-top);
+    padding-left:max(14px,env(safe-area-inset-left));
+    padding-right:max(14px,env(safe-area-inset-right));
+  }
+  .hero{padding-top:calc(92px + env(safe-area-inset-top))}
+  .theme-btn,.fs-btn,.fb,.zb,#pcls,#pshare,.btn-gold,.btn-outline{min-height:44px}
+  .theme-btn{width:44px}
+  .fb{padding-inline:14px}
+  #lbar{-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  #panel{padding-bottom:env(safe-area-inset-bottom)}
+  #zc{bottom:max(10px,env(safe-area-inset-bottom));right:max(10px,env(safe-area-inset-right))}
+  #map-gate{padding-bottom:max(20px,env(safe-area-inset-bottom))}
+  .map-wrap.map-fullscreen{padding-bottom:env(safe-area-inset-bottom)}
 }
 </style>
 </head>
