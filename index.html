@@ -16,13 +16,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAPD | The AI Ecosystem Intelligence Map</title>
-<meta name="description" content="MAPD is the AI Ecosystem Intelligence Map. Explore 78 companies, 90 relationships, and 10 connected layers.">
+<meta name="description" content="MAPD is the AI Ecosystem Intelligence Map. Explore 84 companies, 112 relationships, and 10 connected layers.">
 <meta name="theme-color" content="#080912">
 <link rel="canonical" href="https://mapdguide.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mapdguide.com/">
 <meta property="og:title" content="The AI Ecosystem, MAPD.">
-<meta property="og:description" content="MAPD is the AI Ecosystem Intelligence Map. Explore 78 companies, 90 relationships, and 10 connected layers.">
+<meta property="og:description" content="MAPD is the AI Ecosystem Intelligence Map. Explore 84 companies, 112 relationships, and 10 connected layers.">
 <meta property="og:image" content="https://mapdguide.com/og-image.png">
 <meta property="og:image:secure_url" content="https://mapdguide.com/og-image.png">
 <meta property="og:image:type" content="image/png">
@@ -32,7 +32,7 @@
 <link rel="image_src" href="https://mapdguide.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The AI Ecosystem, MAPD.">
-<meta name="twitter:description" content="MAPD is the AI Ecosystem Intelligence Map. Explore 78 companies, 90 relationships, and 10 connected layers.">
+<meta name="twitter:description" content="MAPD is the AI Ecosystem Intelligence Map. Explore 84 companies, 112 relationships, and 10 connected layers.">
 <meta name="twitter:image" content="https://mapdguide.com/og-image.png">
 <meta name="twitter:image:alt" content="MAPD, the AI Ecosystem Intelligence Map">
 <style id="mapd-embedded-fonts">
@@ -642,24 +642,26 @@ svg *{transition:none}
 .fs-btn:hover{background:var(--border);color:var(--tx)}
 
 /* ─ MAP INTERNALS (dark cosmos) ─ */
-#lbar{
+.map-filters{
   display:flex;align-items:center;gap:8px;padding:7px 16px;
   background:var(--glass-2);border-bottom:1px solid var(--border);
   backdrop-filter:blur(20px);flex-shrink:0;overflow-x:auto;white-space:nowrap;
 }
 [data-theme="light"] .map-wrap{border-color:rgba(15,23,42,.15)!important}
-[data-theme="light"] #lbar{background:#eef1f8;border-bottom:1px solid rgba(15,23,42,.12)}
+[data-theme="light"] .map-filters{background:#eef1f8;border-bottom:1px solid rgba(15,23,42,.12)}
 [data-theme="light"] .lt{color:#64748b}
-[data-theme="light"] .li{color:#1e293b}
-[data-theme="light"] .sep{background:rgba(15,23,42,.15)}
 [data-theme="light"] .fb{border-color:rgba(15,23,42,.2);color:#475569}
 [data-theme="light"] .fb:hover{background:rgba(15,23,42,.06);color:#1e293b}
 [data-theme="light"] #hint{color:#94a3b8}
-#lbar::-webkit-scrollbar{height:2px}
-#lbar::-webkit-scrollbar-thumb{background:var(--bh)}
+.map-filters::-webkit-scrollbar{height:2px}
+.map-filters::-webkit-scrollbar-thumb{background:var(--bh)}
 .lt{font-size:8px;font-weight:700;color:var(--tx-3);flex-shrink:0;text-transform:uppercase;letter-spacing:.1em}
-.li{display:flex;align-items:center;gap:5px;font-size:8.5px;color:var(--tx);font-weight:500;flex-shrink:0}
-.sep{width:1px;height:13px;background:var(--bh);flex-shrink:0}
+#arrow-filters{display:flex;align-items:center;gap:5px}
+.arrow-filter{
+  display:inline-flex;align-items:center;gap:4px;padding:3px 5px;border:1px solid var(--bh);
+  border-radius:5px;background:transparent;color:var(--tx);font:inherit;font-size:9px;cursor:pointer;
+}
+.arrow-filter[aria-pressed="false"]{color:var(--tx-2);text-decoration:line-through;opacity:.6}
 .fb{
   padding:4px 11px;border-radius:999px;border:1px solid var(--bh);
   background:transparent;color:var(--tx-3);font-size:8px;font-weight:600;
@@ -738,6 +740,7 @@ svg *{transition:none}
 .ct.partnership{background:rgba(6,182,212,.1);color:var(--teal);border:1px solid rgba(6,182,212,.3)}
 .ct.alumni{background:rgba(107,114,128,.1);color:#9ca3af;border:1px solid rgba(107,114,128,.3)}
 .ct.owns{background:rgba(68,136,255,.1);color:var(--blue);border:1px solid rgba(68,136,255,.3)}
+.ct.api,.ct.weights,.ct.lineage{background:var(--bg-2);color:var(--tx);border:1px solid var(--bh)}
 .ct.powers{background:rgba(16,185,129,.1);color:var(--green);border:1px solid rgba(16,185,129,.3)}
 .cn{font-size:11px;font-weight:700;color:var(--tx);flex-shrink:0}
 .cd{font-size:9px;color:var(--tx-3);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -987,7 +990,7 @@ svg *{transition:none}
   .marquee-wrap:before,.marquee-wrap:after{width:42px}.mq-logo-xai{margin-inline:-12px}
   .map-section{padding-top:64px}.map-section .sec-hdr{padding:0 20px;margin-bottom:30px}
   .map-top-bar{padding:0 20px}.map-wrap{height:76svh;min-height:540px;margin:0 16px!important}
-  #lbar{padding:7px 12px}.read-sec{padding:44px 24px 48px}.news-sec{padding:70px 24px}.footer{padding:36px 24px}
+  .map-filters{padding:7px 12px}.read-sec{padding:44px 24px 48px}.news-sec{padding:70px 24px}.footer{padding:36px 24px}
 }
 @media(max-width:640px){
   html{font-size:15px}body{width:100%;overflow-x:hidden}.nav{height:56px;padding:0 14px}.nav-logo span:not(.nav-gem){font-size:14px}
@@ -998,7 +1001,7 @@ svg *{transition:none}
   .marquee-wrap{padding:13px 0}.marquee-track{gap:50px;--mq-duration:60s}.mq-logo-btn{height:58px}.mq-logo-img{max-width:calc(var(--mw,168px)*.72);max-height:calc(var(--mh,44px)*.76)}.mq-logo-openai .mq-logo-img{min-width:82px}.mq-logo-xai{margin-inline:-10px}
   .sec-hdr{margin-bottom:30px}.sec-h2{font-size:clamp(28px,9vw,38px)}.sec-sub{font-size:14px;padding:0 2px}
   .map-section{padding-top:52px}.map-top-bar{justify-content:center;padding:0 14px;margin-bottom:10px}.fs-btn{font-size:12px;padding:7px 12px}.map-wrap{height:78svh;min-height:520px;margin:0 10px!important;border-radius:10px!important}
-  #lbar{gap:7px;padding:7px 10px}.lt{font-size:7.5px}.li{font-size:8px}.fb{font-size:8px;padding:4px 10px}
+  .map-filters{gap:7px;padding:7px 10px}.lt{font-size:7.5px}.fb{font-size:8px;padding:4px 10px}
   #msearch{top:10px;left:10px;width:calc(100% - 20px);max-width:none}#msearch-bar{height:40px;border-radius:10px}#msearch-results{max-height:36vh}
   #zc{right:10px;bottom:10px}.zb{width:34px;height:34px}#hint{display:none}#map-gate .gate-msg{font-size:12px;padding:8px 13px;margin:0 12px;text-align:center}
   #panel{width:100%;top:auto;height:min(72%,560px);border-left:none;border-top:1px solid var(--bh);transform:translateY(100%);border-radius:14px 14px 0 0}#panel.open{transform:translateY(0)}#ph{padding:12px}#pb{padding:11px}.mrow{grid-template-columns:1fr}.mc.w{grid-column:span 1}.conn{align-items:flex-start}.cd{white-space:normal}.cmore{display:none}
@@ -1056,7 +1059,7 @@ svg *{transition:none}
 [data-theme="light"] .nc{fill:#ffffff!important}
 [data-theme="light"] .nlt{fill:#1e293b!important}
 /* Panel adapts via CSS vars automatically */
-[data-theme="dark"] #lbar{background:var(--glass-2)!important;border-bottom-color:var(--border)!important}
+[data-theme="dark"] .map-filters{background:var(--glass-2)!important;border-bottom-color:var(--border)!important}
 
 /* Exit fullscreen inner button */
 #fs-exit-inner{
@@ -1213,7 +1216,7 @@ h1,h2,h3,.syn,.nav-logo,.foot-logo,.btn-gold,.btn-outline,.faq-q{
   font-family:var(--font-display);
   letter-spacing:0;
 }
-.mono,.sec-tag,.md-kicker,.hs-lbl,.read-kpi span,.news-badge,.news-live,.lt,.li,.fb,.pblbl,.pst,.ml,.chain-lbl{
+.mono,.sec-tag,.md-kicker,.hs-lbl,.read-kpi span,.news-badge,.news-live,.lt,.fb,.pblbl,.pst,.ml,.chain-lbl{
   font-family:var(--font-data);
   letter-spacing:0;
 }
@@ -1574,7 +1577,7 @@ h1,h2,h3,.syn,.nav-logo,.foot-logo,.btn-gold,.btn-outline,.faq-q{
   background:var(--bg-2);
   box-shadow:var(--shadow-deep);
 }
-#lbar{
+.map-filters{
   background:var(--glass-2)!important;
   border-bottom-color:var(--border)!important;
   font-family:var(--font-data);
@@ -2110,7 +2113,7 @@ h1,h2,h3,.syn,.nav-logo,.foot-logo,.btn-gold,.btn-outline,.faq-q{
   font-family:var(--font-body);
   letter-spacing:0;
 }
-.theme-btn,.fb,#lbar,#msearch-input{font-family:var(--font-data)}
+.theme-btn,.fb,.map-filters,#msearch-input{font-family:var(--font-data)}
 
 /* Motion */
 .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
@@ -2183,7 +2186,7 @@ body{overflow-wrap:anywhere}
   .theme-btn,.fs-btn,.fb,.zb,#pcls,#pshare,.btn-gold,.btn-outline{min-height:44px}
   .theme-btn{width:44px}
   .fb{padding-inline:14px}
-  #lbar{-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .map-filters{-webkit-overflow-scrolling:touch;scrollbar-width:thin}
   #panel{padding-bottom:env(safe-area-inset-bottom)}
   #zc{bottom:max(10px,env(safe-area-inset-bottom));right:max(10px,env(safe-area-inset-right))}
   #map-gate{padding-bottom:max(20px,env(safe-area-inset-bottom))}
@@ -2264,17 +2267,17 @@ body{overflow-wrap:anywhere}
 <section class="hero">
   <div class="hero-bg-glow"></div>
   <div class="hero-content">
-    <div class="hero-badge reveal up"><span class="hero-badge-main"><span class="hero-badge-dot"></span>MAPD Version 1.1</span><span class="hero-badge-sub">Updated June 2026</span></div>
+    <div class="hero-badge reveal up"><span class="hero-badge-main"><span class="hero-badge-dot"></span>MAPD Version 1.1</span><span class="hero-badge-sub">Model coverage updated November 2026</span></div>
     
     <h1 class="hero-h1 reveal up">The AI Ecosystem,<br><em>MAPD.</em></h1>
-    <p class="hero-sub reveal up">78 companies. 90 relationships. 10 ecosystem layers. More than $20 trillion in ecosystem value, connected in one interactive intelligence map.</p>
+    <p class="hero-sub reveal up">84 companies. 112 relationships. 10 ecosystem layers. More than $20 trillion in ecosystem value, connected in one interactive intelligence map.</p>
     <div class="hero-ctas reveal up">
       <a href="#map" class="btn-gold">Explore the Map</a>
       <a href="#features" class="btn-outline">How to Read It</a>
     </div>
     <div class="hero-stats reveal up">
-      <div class="hs"><span class="hs-num"><span id="c1">78</span></span><span class="hs-lbl">Companies &amp; Apps</span></div>
-      <div class="hs"><span class="hs-num"><span id="c2">90</span></span><span class="hs-lbl">Relationships Mapped</span></div>
+      <div class="hs"><span class="hs-num"><span id="c1">84</span></span><span class="hs-lbl">Companies &amp; Apps</span></div>
+      <div class="hs"><span class="hs-num"><span id="c2">112</span></span><span class="hs-lbl">Relationships Mapped</span></div>
       <div class="hs"><span class="hs-num"><span id="c3">10</span></span><span class="hs-lbl">Ecosystem Layers</span></div>
       <div class="hs"><span class="hs-num value-long">$<span id="c4">20</span><span class="value-word"> trillion+</span></span><span class="hs-lbl">Total AI Ecosystem Value</span></div>
     </div>
@@ -2305,19 +2308,12 @@ body{overflow-wrap:anywhere}
     </button>
   </div>
   <div class="map-wrap">
-    <div id="lbar">
-      <span class="lt">Lines:</span>
-      <div class="li"><svg width="36" height="10"><line x1="1" y1="5" x2="28" y2="5" stroke="#f5a623" stroke-width="3.5"></line><polygon points="28,2 36,5 28,8" fill="#f5a623"></polygon></svg><strong style="color:#f5a623">Investment</strong></div>
-      <div class="sep"></div>
-      <div class="li"><svg width="36" height="10"><line x1="1" y1="5" x2="28" y2="5" stroke="#06b6d4" stroke-width="2" stroke-dasharray="7,4"></line><polygon points="28,2 36,5 28,8" fill="#06b6d4"></polygon></svg><strong style="color:#06b6d4">Partnership</strong></div>
-      <div class="sep"></div>
-      <div class="li"><svg width="36" height="10"><line x1="1" y1="5" x2="28" y2="5" stroke="#6b7280" stroke-width="1.8" stroke-dasharray="3,6"></line><polygon points="28,2 36,5 28,8" fill="#6b7280"></polygon></svg><strong style="color:#9ca3af">Alumni</strong></div>
-      <div class="sep"></div>
-      <div class="li"><svg width="36" height="10"><line x1="1" y1="5" x2="28" y2="5" stroke="#4488ff" stroke-width="2.5"></line><polygon points="28,2 36,5 28,8" fill="#4488ff"></polygon></svg><strong style="color:#4488ff">Ownership</strong></div>
-      <div class="sep"></div>
-      <div class="li"><svg width="36" height="10"><line x1="1" y1="5" x2="28" y2="5" stroke="#10b981" stroke-width="2" stroke-dasharray="6,4"></line><polygon points="28,2 36,5 28,8" fill="#10b981"></polygon></svg><strong style="color:#10b981">Powers</strong></div>
-      <div class="sep"></div>
-      <span class="lt">Filter:</span>
+    <div id="lbar" class="map-filters">
+      <span class="lt">Arrows</span>
+      <div id="arrow-filters" role="group" aria-label="Arrow types"></div>
+    </div>
+    <div class="map-filters" role="group" aria-label="Company categories">
+      <span class="lt">Companies</span>
       <button class="fb act" data-f="all">All</button>
       <button class="fb" data-f="infrastructure">Compute</button>
       <button class="fb" data-f="cloud">Cloud</button>
@@ -2378,7 +2374,7 @@ body{overflow-wrap:anywhere}
       <div id="msearch">
         <div id="msearch-bar">
           <svg id="msearch-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
-          <input id="msearch-input" type="text" placeholder="Search 78 companies &amp; apps…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Search the map" aria-autocomplete="list" aria-controls="msearch-results" aria-expanded="false" role="combobox">
+          <input id="msearch-input" type="text" placeholder="Search 84 companies &amp; apps…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Search the map" aria-autocomplete="list" aria-controls="msearch-results" aria-expanded="false" role="combobox">
           <button id="msearch-clear" type="button" aria-label="Clear search" tabindex="-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
         </div>
         <div id="msearch-results" role="listbox" aria-label="Search results"></div>
@@ -2399,10 +2395,10 @@ body{overflow-wrap:anywhere}
     <div class="read-copy">
       <div class="sec-tag">How to Read It</div>
       <h2 class="sec-h2 syn">Start with a node, then follow the power.</h2>
-      <p>Each dot is a company or app. Click a dot to open its story, click a line to see the relationship, and use the filters when you want one layer instead of the whole AI ecosystem at once.</p>
+      <p>Each dot is a company or app. Click a dot for company details or a line for relationship details. Toggle arrow types in the legend or use the company filters to highlight a layer.</p>
       <div class="read-kpis" aria-label="Map scope">
-        <div class="read-kpi"><strong>78</strong><span>Companies &amp; apps</span></div>
-        <div class="read-kpi"><strong>90</strong><span>Relationships</span></div>
+        <div class="read-kpi"><strong>84</strong><span>Companies &amp; apps</span></div>
+        <div class="read-kpi"><strong>112</strong><span>Relationships</span></div>
         <div class="read-kpi"><strong>10</strong><span>Layers</span></div>
         <div class="read-kpi"><strong>$20T+</strong><span>Ecosystem value</span></div>
       </div>
@@ -2521,7 +2517,7 @@ body{overflow-wrap:anywhere}
     <h2 class="sec-h2 syn">Frequently Asked</h2>
   </div>
   <div class="faq-list">
-    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How current is this data?<div class="faq-ico">+</div></button><div class="faq-a">Updated June 2026. Major investments, ownership relationships, model dependencies, and valuation language have been cross-checked. AI moves fast, so some estimates may shift. When in doubt, company websites and SEC filings are the source of truth.</div></div>
+    <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How current is this data?<div class="faq-ico">+</div></button><div class="faq-a">The original map dates to June 2026. The November 2026 model coverage includes source links for the added relationships. Dates on the valuation snapshots vary.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What do the different colored lines mean?<div class="faq-ico">+</div></button><div class="faq-a">There are five line types: Gold solid lines = financial investment (money changing hands). Teal long-dashed lines = strategic partnerships. Gray dotted lines = alumni spinoffs (key people who left to found something new). Blue solid lines = ownership (company owns this product). Green short-dashed lines = AI powering a product. Click any line to get the full story behind it.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Why isn't [company X] on the map?<div class="faq-ico">+</div></button><div class="faq-a">The map prioritizes the highest impact nodes in each layer. These companies represent a distinct capability or relationship in the ecosystem. Some companies were excluded because a parent company already represents them, because they are too niche for a general audience, or because their AI story is already represented by another node. This is an evolving project and new nodes can always be added.</div></div>
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I navigate the map on mobile?<div class="faq-ico">+</div></button><div class="faq-a">On mobile, use two fingers to pinch-zoom and one finger to pan. Tap any node to open its detail panel, which slides in from the right. Tap any connecting line for the relationship story. Use the filter buttons at the top to isolate specific layers of the ecosystem.</div></div>
@@ -2584,7 +2580,7 @@ body{overflow-wrap:anywhere}
 </svg></span>
       <span class="brand-word">MAPD</span>
     </div>
-    <div class="foot-meta"><span class="live-dot"></span>AI Ecosystem 2026. Updated June 2026. 78 companies. 90 relationships.</div>
+    <div class="foot-meta"><span class="live-dot"></span>AI Ecosystem 2026. 84 companies. 112 relationships.</div>
   </div>
 </footer>
 
@@ -2868,7 +2864,7 @@ function drawLogo(g,id,r){
   if(L[id]){
     L[id]();
   } else {
-    const initials={thinkingmachines:"TM",openrouter:"OR"};
+    const initials={thinkingmachines:"TM",openrouter:"OR",moonshot:"K",zhipu:"Z",minimax:"MM",stepfun:"SF",xiaomi:"Mi",fireworks:"FW"};
     const color=g.node().parentNode.classList.contains("ng")?"#0e7490":"white";
     g.append("text").attr("text-anchor","middle").attr("dominant-baseline","central")
       .attr("font-size",r*.38).attr("font-weight","900").attr("font-family","Arial")
@@ -2893,7 +2889,10 @@ const LT={
   partnership:{c:"#0891b2",w:2.2,dash:"9,5",lbl:"Partnership"},
   alumni:{c:"#6b7280",w:1.8,dash:"3,7",lbl:"Alumni Spinoff"},
   owns:{c:"#1d4ed8",w:2.8,dash:null,lbl:"Owns"},
-  powers:{c:"#16a34a",w:2,dash:"6,4",lbl:"Powers"}
+  powers:{c:"#16a34a",w:2,dash:"6,4",lbl:"Powers"},
+  api:{c:"#0369a1",w:2.2,dash:"6,3",lbl:"Model API"},
+  weights:{c:"#7c3aed",w:2.1,dash:null,lbl:"Model weights"},
+  lineage:{c:"#be185d",w:2.8,dash:"8,3,2,3",lbl:"Post-training"}
 };
 
 // Virtual canvas , large for no overlap
@@ -3110,52 +3109,85 @@ const COS=[
  founded:2024,hq:"Palo Alto, CA",val:"~$32B",
  chain:[{id:"openai",role:"Where Ilya came from",col:"#5b21b6"},{id:"ssi",role:"AGI safety research",col:"#5b21b6"}]},
 
-// CHINESE AI , right column  yn≈0.288 to 0.375
-{id:"deepseek",url:"https://www.deepseek.com",name:"DeepSeek",cat:"chinese",r:36,xn:.735,yn:.32,hot:true,
- tagline:"Crashed Nvidia's stock $590B in one day , January 20, 2025",
- plain:"Released DeepSeek R1 on Jan 20 2025 matching OpenAI's best model for ~$5.6M training (vs OpenAI's $100M+). Nvidia stock crashed 17%, $590B wiped , largest single-day market cap loss in history. R1 is free and open-source. Founded by quant hedge fund High-Flyer Capital.",
- youknow:"The AI that triggered January 2025's historic market crash",
+{id:"fireworks",name:"Fireworks AI",url:"https://fireworks.ai/",cat:"cloud",r:36,xn:.85,yn:.222,
+ tagline:"Managed inference for open models",
+ plain:"Fireworks runs inference for external models. Its Azure integration makes select Fireworks-hosted models available via Microsoft Foundry.",
+ products:["Managed inference","Microsoft Foundry integration"],
+ sources:[{label:"Azure integration",url:"https://azure.microsoft.com/en-us/blog/introducing-fireworks-ai-on-microsoft-foundry-bringing-high-performance-low-latency-open-model-inference-to-azure/"}]},
+
+// Chinese model developers in the foundation-model tier
+{id:"deepseek",url:"https://www.deepseek.com",name:"DeepSeek",cat:"chinese",r:36,xn:0.605,yn:.32,hot:true,
+ tagline:"Open-weight language and reasoning models",
+ plain:"DeepSeek publishes checkpoints for its V and R model families, including DeepSeek-R1. Azure offers several DeepSeek models as managed API endpoints. Microsoft used R1 as the base of MAI-DS-R1.",
  people:[{n:"Liang Wenfeng",r:"CEO (also runs High-Flyer hedge fund)"}],
  products:["DeepSeek Chat (free)","DeepSeek API","DeepSeek-Coder"],
- models:["DeepSeek R1 (open-source)","DeepSeek V3","DeepSeek V3.5"],
+ models:["DeepSeek-R1","DeepSeek-V3"],
  founded:2023,hq:"Hangzhou, China",val:"Private , undisclosed",
  chain:[{id:"deepseek",role:"Chinese AI challenger",col:"#c2410c"}]},
-{id:"bytedance",url:"https://www.bytedance.com",name:"ByteDance",cat:"chinese",r:36,xn:.868,yn:.32,hot:false,
- tagline:"TikTok's parent , algorithm that changed how a billion people consume content",
- plain:"ByteDance owns TikTok. The For You Page AI has reshaped global attention spans , history's most impactful AI deployment. Also: Doubao chatbot, CapCut AI video editor, Wan AI video generator. Under extreme US government pressure over Chinese ownership of TikTok.",
+{id:"bytedance",url:"https://www.bytedance.com",name:"ByteDance",cat:"chinese",r:36,xn:0.687,yn:.32,hot:false,
+ tagline:"Seed, Doubao and Seedance model families",
+ plain:"ByteDance Seed develops the Seed language and multimodal models and the Seedance video models. Its Seed-OSS release includes downloadable language-model checkpoints.",
  youknow:"TikTok · CapCut , both ByteDance",
  people:[{n:"Liang Rubo",r:"CEO"},{n:"Zhang Yiming",r:"Founder"}],
- products:["TikTok","Doubao chatbot","CapCut","Wan 2.1 (video gen)"],
- models:["Doubao-Pro","Wan 2.1"],
+ products:["TikTok","Doubao chatbot","CapCut"],
+ models:["Seed2.1","Seedance 2.5","Seed-OSS-36B-Instruct"],
+ sources:[{label:"ByteDance Seed portfolio",url:"https://seed.bytedance.com/en/seed_model_portfolio"}],
  founded:2012,hq:"Beijing, China",val:"~$300B+ (private)",
  chain:[{id:"bytedance",role:"Chinese tech + TikTok",col:"#c2410c"}]},
-{id:"alibaba",url:"https://www.alibabacloud.com",name:"Alibaba",cat:"chinese",r:36,xn:.735,yn:.376,hot:false,
- tagline:"China's Amazon , free Qwen models top global benchmarks",
- plain:"Alibaba is China's e-commerce + cloud giant. Qwen AI models are free on HuggingFace and consistently top global benchmarks. Alibaba Cloud is the largest cloud in Asia.",
+{id:"alibaba",url:"https://www.alibabacloud.com",name:"Alibaba",cat:"chinese",r:36,xn:0.769,yn:.32,hot:false,
+ tagline:"Alibaba Cloud develops Qwen and Wan",
+ plain:"Alibaba Cloud publishes Qwen language and multimodal models and Wan video models. The Qwen3-32B checkpoint is available on Hugging Face and serves as an example of Qwen distribution through Fireworks on Azure Foundry.",
  youknow:"AliExpress · Alibaba Cloud · Qwen AI models",
  people:[{n:"Eddie Wu",r:"CEO"},{n:"Jack Ma",r:"Founder (reduced role)"}],
  products:["Tongyi Qianwen chatbot","Qwen models (free)","Alibaba Cloud"],
- models:["Qwen2.5-72B","QwQ-32B (reasoning)"],
+ models:["Qwen3-32B","Qwen3.5","Wan 2.1"],
+ sources:[{label:"Wan checkpoint",url:"https://huggingface.co/Wan-AI/Wan2.1-T2V-14B"}],
  founded:1999,hq:"Hangzhou, China",val:"~$250 to 280B market cap",
  chain:[{id:"alibaba",role:"Chinese e-commerce + cloud AI",col:"#c2410c"}]},
-	{id:"baidu",url:"https://www.baidu.com",name:"Baidu",cat:"chinese",r:36,xn:.868,yn:.376,hot:false,
+	{id:"baidu",url:"https://www.baidu.com",name:"Baidu",cat:"chinese",r:36,xn:0.851,yn:.32,hot:false,
 	 tagline:"China's Google , first ChatGPT competitor, now squeezed by DeepSeek",
 	 plain:"China's dominant search engine. Launched ERNIE Bot, China's first ChatGPT competitor. Runs Apollo self-driving platform with active robotaxis. Being outcompeted by DeepSeek and ByteDance.",
 	 youknow:"Baidu search (China's Google) · Apollo autonomous driving",
 	 people:[{n:"Robin Li",r:"CEO/Co-founder"}],
 	 products:["ERNIE Bot","Apollo (self-driving)"],
-	 models:["ERNIE 4.0 Turbo"],
+	 models:["ERNIE 4.5","ERNIE-4.5-0.3B-Base"],
 	 founded:2000,hq:"Beijing, China",val:"~$30 to 35B market cap",
 	 chain:[{id:"baidu",role:"Chinese search + AI",col:"#c2410c"}]},
-	{id:"tencent",url:"https://www.tencent.com",name:"Tencent",cat:"chinese",r:36,xn:.94,yn:.376,hot:false,
+	{id:"tencent",url:"https://www.tencent.com",name:"Tencent",cat:"chinese",r:36,xn:0.933,yn:.32,hot:false,
 	 tagline:"China's social, gaming, cloud, and AI giant behind WeChat",
 	 plain:"Tencent is one of China's most important technology companies: WeChat, gaming, payments, cloud, and AI models all sit inside the Tencent ecosystem. It belongs on the map because it touches consumer attention, enterprise cloud, and China's AI platform layer.",
 	 youknow:"WeChat · Tencent Cloud · gaming · Hunyuan AI",
 	 people:[{n:"Pony Ma",r:"CEO/Co-founder"}],
 	 products:["WeChat","Tencent Cloud","Hunyuan AI","Tencent Games"],
-	 models:["Hunyuan"],
+	 models:["Hunyuan","Hunyuan-A13B-Instruct"],
 	 founded:1998,hq:"Shenzhen, China",val:"~$450B+ market cap",
 	 chain:[{id:"tencent",role:"Chinese platform + AI",col:"#c2410c"}]},
+
+{id:"moonshot",name:"Moonshot AI",url:"https://www.kimi.com/",cat:"chinese",r:36,xn:0.605,yn:0.397,
+ tagline:"Kimi model developer",
+ plain:"Moonshot AI develops the Kimi model family. It publishes Kimi-K3 weights on Hugging Face and has models available through OpenRouter.",
+ models:["Kimi", "Kimi-K3"],aliases:["月之暗面"],
+ sources:[{label:"Open checkpoint",url:"https://huggingface.co/moonshotai/Kimi-K3"},{label:"OpenRouter catalog",url:"https://openrouter.ai/moonshotai"}]},
+{id:"zhipu",name:"Z.ai (Zhipu)",url:"https://z.ai/",cat:"chinese",r:36,xn:0.687,yn:0.397,
+ tagline:"GLM model developer",
+ plain:"Z.ai (Zhipu) develops the GLM model family. It publishes GLM-5.3-Flash weights on Hugging Face and has models available through OpenRouter.",
+ models:["GLM", "GLM-5.3-Flash"],aliases:["智谱", "Zhipu AI", "Z.ai"],
+ sources:[{label:"Open checkpoint",url:"https://huggingface.co/zai-org/GLM-5.3-Flash"},{label:"OpenRouter catalog",url:"https://openrouter.ai/z-ai"}]},
+{id:"minimax",name:"MiniMax",url:"https://www.minimax.io/",cat:"chinese",r:36,xn:0.769,yn:0.397,
+ tagline:"MiniMax foundation model developer",
+ plain:"MiniMax develops the MiniMax M-series. It publishes MiniMax-M3 weights on Hugging Face and has models available through OpenRouter.",
+ models:["MiniMax M", "MiniMax-M3"],aliases:["稀宇科技"],
+ sources:[{label:"Open checkpoint",url:"https://huggingface.co/MiniMaxAI/MiniMax-M3"},{label:"OpenRouter catalog",url:"https://openrouter.ai/minimax"}]},
+{id:"stepfun",name:"StepFun",url:"https://www.stepfun.com/",cat:"chinese",r:36,xn:0.851,yn:0.397,
+ tagline:"Step model developer",
+ plain:"StepFun develops the Step model family. It publishes Step-3.5-Flash weights on Hugging Face and has models available through OpenRouter.",
+ models:["Step", "Step-3.5-Flash"],aliases:["阶跃星辰", "Step 5 Preview"],
+ sources:[{label:"Open checkpoint",url:"https://huggingface.co/stepfun-ai/Step-3.5-Flash"},{label:"OpenRouter catalog",url:"https://openrouter.ai/stepfun"}]},
+{id:"xiaomi",name:"Xiaomi",url:"https://www.mi.com/global/",cat:"chinese",r:36,xn:0.933,yn:0.397,
+ tagline:"MiMo model developer",
+ plain:"Xiaomi develops the MiMo model family. It publishes MiMo-V2.5 weights on Hugging Face and has models available through OpenRouter.",
+ models:["MiMo", "MiMo-V2.5"],aliases:["小米", "MiMo-V2.6-Flash"],
+ sources:[{label:"Open checkpoint",url:"https://huggingface.co/XiaomiMiMo/MiMo-V2.5"},{label:"OpenRouter catalog",url:"https://openrouter.ai/xiaomi"}]},
 
 	// ── TIER 5: SPECIALIZED AI  yn≈0.375 ────────────────
 {id:"midjourney",url:"https://www.midjourney.com",name:"Midjourney",cat:"specialized",r:36,xn:.062,yn:.497,hot:false,
@@ -3657,6 +3689,51 @@ const CO_RELS=[
  ag:"~$40B+ annual revenue. Growing fastest. Essential for Vertex AI and Anthropic.",
  bg:"Google Cloud infrastructure including TPUs.",
  amt:"Google division , $40B+ annual revenue",dt:"Founded 2008"},
+// ── Verified model access and lineage ───────────────────
+{s:"deepseek",t:"huggingface",type:"weights",short:"DeepSeek-R1 weights on Hugging Face",
+ why:"DeepSeek-R1 is published as a downloadable checkpoint on Hugging Face.",source:"https://huggingface.co/deepseek-ai/DeepSeek-R1"},
+{s:"alibaba",t:"huggingface",type:"weights",short:"Qwen3-32B weights on Hugging Face",
+ why:"Qwen3-32B is published as a downloadable checkpoint on Hugging Face.",source:"https://huggingface.co/Qwen/Qwen3-32B"},
+{s:"baidu",t:"huggingface",type:"weights",short:"ERNIE-4.5-0.3B-Base weights on Hugging Face",
+ why:"ERNIE-4.5-0.3B-Base is published as a downloadable checkpoint on Hugging Face.",source:"https://huggingface.co/baidu/ERNIE-4.5-0.3B-Base-Paddle"},
+{s:"bytedance",t:"huggingface",type:"weights",short:"Seed-OSS-36B-Instruct weights on Hugging Face",
+ why:"Seed-OSS-36B-Instruct is published as a downloadable checkpoint on Hugging Face.",source:"https://huggingface.co/ByteDance-Seed/Seed-OSS-36B-Instruct"},
+{s:"tencent",t:"huggingface",type:"weights",short:"Hunyuan-A13B-Instruct weights on Hugging Face",
+ why:"Hunyuan-A13B-Instruct is published as a downloadable checkpoint on Hugging Face.",source:"https://huggingface.co/tencent/Hunyuan-A13B-Instruct"},
+{s:"moonshot",t:"huggingface",type:"weights",short:"Kimi-K3 weights on Hugging Face",
+ why:"Kimi-K3 is published as a downloadable checkpoint on Hugging Face.",source:"https://huggingface.co/moonshotai/Kimi-K3"},
+{s:"zhipu",t:"huggingface",type:"weights",short:"GLM-5.3-Flash weights on Hugging Face",
+ why:"GLM-5.3-Flash is published as a downloadable checkpoint on Hugging Face.",source:"https://huggingface.co/zai-org/GLM-5.3-Flash"},
+{s:"minimax",t:"huggingface",type:"weights",short:"MiniMax-M3 weights on Hugging Face",
+ why:"MiniMax-M3 is published as a downloadable checkpoint on Hugging Face.",source:"https://huggingface.co/MiniMaxAI/MiniMax-M3"},
+{s:"stepfun",t:"huggingface",type:"weights",short:"Step-3.5-Flash weights on Hugging Face",
+ why:"Step-3.5-Flash is published as a downloadable checkpoint on Hugging Face.",source:"https://huggingface.co/stepfun-ai/Step-3.5-Flash"},
+{s:"xiaomi",t:"huggingface",type:"weights",short:"MiMo-V2.5 weights on Hugging Face",
+ why:"MiMo-V2.5 is published as a downloadable checkpoint on Hugging Face.",source:"https://huggingface.co/XiaomiMiMo/MiMo-V2.5"},
+{s:"moonshot",t:"openrouter",type:"api",relation:"API distribution",short:"Kimi models in the OpenRouter API",
+ why:"OpenRouter lists Moonshot AI models in its unified inference API.",source:"https://openrouter.ai/moonshotai"},
+{s:"zhipu",t:"openrouter",type:"api",relation:"API distribution",short:"GLM models in the OpenRouter API",
+ why:"OpenRouter lists Z.ai (Zhipu) models in its unified inference API.",source:"https://openrouter.ai/z-ai"},
+{s:"minimax",t:"openrouter",type:"api",relation:"API distribution",short:"MiniMax models in the OpenRouter API",
+ why:"OpenRouter lists MiniMax models in its unified inference API.",source:"https://openrouter.ai/minimax"},
+{s:"stepfun",t:"openrouter",type:"api",relation:"API distribution",short:"Step models in the OpenRouter API",
+ why:"OpenRouter lists StepFun models in its unified inference API.",source:"https://openrouter.ai/stepfun"},
+{s:"xiaomi",t:"openrouter",type:"api",relation:"API distribution",short:"MiMo models in the OpenRouter API",
+ why:"OpenRouter lists Xiaomi models in its unified inference API.",source:"https://openrouter.ai/xiaomi"},
+{s:"deepseek",t:"azure",type:"api",relation:"Azure-hosted API",short:"DeepSeek models hosted by Azure",
+ why:"Microsoft lists DeepSeek models as hosted, operated and sold directly by Azure in Foundry.",source:"https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?view=foundry-classic"},
+{s:"moonshot",t:"azure",type:"api",relation:"Azure-hosted API",short:"Kimi models hosted by Azure",
+ why:"Microsoft lists Moonshot AI Kimi models as hosted, operated and sold directly by Azure in Foundry.",source:"https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/models-sold-directly-by-azure?view=foundry-classic"},
+{s:"alibaba",t:"fireworks",type:"api",relation:"Partner-hosted API",short:"Qwen models hosted by Fireworks",
+ why:"The Fireworks catalog in Foundry includes Qwen models such as FW-Qwen3-32B.",source:"https://learn.microsoft.com/en-us/azure/foundry/how-to/fireworks/fireworks-model-catalog"},
+{s:"zhipu",t:"fireworks",type:"api",relation:"Partner-hosted API",short:"GLM models hosted by Fireworks",
+ why:"The Fireworks catalog in Foundry includes Z.ai models such as FW-GLM-5.3.",source:"https://learn.microsoft.com/en-us/azure/foundry/how-to/fireworks/fireworks-model-catalog"},
+{s:"minimax",t:"fireworks",type:"api",relation:"Partner-hosted API",short:"MiniMax M3 hosted by Fireworks",
+ why:"The Fireworks catalog in Foundry lists FW-MiniMax-M3 as generally available.",source:"https://learn.microsoft.com/en-us/azure/foundry/how-to/fireworks/fireworks-model-catalog"},
+{s:"fireworks",t:"azure",type:"api",relation:"API integration",short:"Fireworks inference via Azure Foundry",
+ why:"Microsoft Foundry offers an Azure endpoint for models served by the Fireworks inference stack.",source:"https://azure.microsoft.com/en-us/blog/introducing-fireworks-ai-on-microsoft-foundry-bringing-high-performance-low-latency-open-model-inference-to-azure/"},
+{s:"deepseek",t:"microsoft",type:"lineage",short:"DeepSeek-R1 → Microsoft MAI-DS-R1",
+ why:"Microsoft AI post-trained MAI-DS-R1 from DeepSeek-R1. The model card identifies the parent and publishes the derivative checkpoint.",source:"https://huggingface.co/microsoft/MAI-DS-R1"},
 // ── Cloud → AI Lab relationships ──────────────────────
 {s:"azure",t:"openai",      type:"partnership",w:3.2,short:"OpenAI's EXCLUSIVE cloud , all ChatGPT runs on Azure",
  why:"Microsoft invested $13B in OpenAI and built the OpenAI-Azure relationship as part of the deal.",
@@ -3673,16 +3750,10 @@ const CO_RELS=[
  ag:"$300M stake. Anthropic uses Google Cloud. Hedge vs OpenAI/Microsoft.",
  bg:"$300M cash. Google Cloud as secondary cloud provider.",
  amt:"~$300 million",dt:"2023"},
-{s:"aws",t:"deepseek",      type:"partnership",w:1.5,short:"DeepSeek R1 available via AWS Bedrock",
- why:"Amazon added DeepSeek R1 to Bedrock after Jan 2025 launch shocked the world.",
- ag:"Revenue from DeepSeek inference. Positions Bedrock as comprehensive marketplace.",
- bg:"Distribution to millions of AWS businesses. Amazon's enterprise reach.",
- amt:"API partnership , no equity",dt:"2025"},
-{s:"google_cloud",t:"deepseek",type:"partnership",w:1.5,short:"DeepSeek R1 on Google Cloud Vertex AI",
- why:"Google Cloud offers DeepSeek R1 on Vertex AI to compete with AWS Bedrock.",
- ag:"Revenue from DeepSeek inference. Competitive with Azure/AWS.",
- bg:"Enterprise distribution via Vertex AI.",
- amt:"API partnership , no equity",dt:"2025"},
+{s:"deepseek",t:"aws",type:"api",relation:"Bedrock-hosted API",short:"DeepSeek models on Amazon Bedrock",
+ why:"AWS lists DeepSeek R1, V3.1 and V3.2 in the Bedrock model catalog. AWS marks R1 as legacy.",source:"https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html"},
+{s:"deepseek",t:"google_cloud",type:"weights",relation:"Self-deploy",short:"DeepSeek-R1 self-deployment on Google Cloud",
+ why:"Google Cloud documents self-deployment of DeepSeek-R1 in Model Garden using custom weights.",source:"https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/model-garden/deploy-models-with-custom-weights"},
 // ── Big Tech → AI Lab investments ─────────────────────
 {s:"microsoft",t:"openai",  type:"investment",w:4,short:"~$13B for ~49% of profits , the biggest AI bet in history",
  why:"Microsoft needed frontier AI to compete with Google. OpenAI needed billions and cloud power.",
@@ -3757,16 +3828,10 @@ const CO_RELS=[
  ag:"A channel for distributing the model to downstream developers.",
  bg:"A downloadable model for Hub users.",
  amt:"Checkpoint distribution",dt:"November 2026"},
-{s:"openai",t:"openrouter",type:"partnership",w:1.7,short:"OpenAI models in the OpenRouter API",
- why:"OpenRouter lists OpenAI models in its unified inference API.",
- ag:"An additional API access route for developers.",
- bg:"OpenAI model endpoints in the gateway catalog.",
- amt:"API availability",dt:"Checked November 2026"},
-{s:"anthropic",t:"openrouter",type:"partnership",w:1.7,short:"Anthropic models in the OpenRouter API",
- why:"OpenRouter lists Anthropic models in its unified inference API.",
- ag:"An additional API access route for developers.",
- bg:"Anthropic model endpoints in the gateway catalog.",
- amt:"API availability",dt:"Checked November 2026"},
+{s:"openai",t:"openrouter",type:"api",relation:"API distribution",short:"OpenAI models in the OpenRouter API",
+ why:"OpenRouter lists OpenAI models in its unified inference API.",source:"https://openrouter.ai/openai"},
+{s:"anthropic",t:"openrouter",type:"api",relation:"API distribution",short:"Anthropic models in the OpenRouter API",
+ why:"OpenRouter lists Anthropic models in its unified inference API.",source:"https://openrouter.ai/anthropic"},
 // ── Enterprise AI connections ─────────────────────────
 {s:"salesforce",t:"openai", type:"partnership",w:2,short:"Einstein AI uses OpenAI GPT-4",
  why:"Salesforce integrated OpenAI to add AI to its CRM products.",
@@ -3960,6 +4025,7 @@ const VALUE_METRICS={
   cloudShare:{values:CLOUD_SHARES,note:"Global cloud infrastructure · Q3 2026"}
 };
 let valueMetric=null;
+const hiddenArrowTypes=new Set();
 
 // ═══ MODULE-LEVEL STATE ═══════════════════════════════
 let curFilter="all", selId=null, coSel=null, apSel=null, nById=null, svgZoom=null, svgEl=null;
@@ -3984,9 +4050,9 @@ function showNodeTip(ev,d){
 }
 function showLinkTip(ev,d){
   const cfg=LT[d.type];
-  document.getElementById("tipn").innerHTML="<span style=\"background:"+cfg.c+";color:white;padding:2px 7px;border-radius:4px;font-size:9px;font-weight:700\">"+cfg.lbl+"</span>";
+  document.getElementById("tipn").innerHTML="<span style=\"background:"+cfg.c+";color:white;padding:2px 7px;border-radius:4px;font-size:9px;font-weight:700\">"+(d.relation||cfg.lbl)+"</span>";
   document.getElementById("tipc").textContent="";
-  document.getElementById("tipt").textContent=(d.src?d.src.name:"")+" → "+(d.tgt?d.tgt.name:"")+" · Click for full story";
+  document.getElementById("tipt").textContent=(d.src?d.src.name:"")+" → "+(d.tgt?d.tgt.name:"")+" · "+d.short;
   TIP.classList.add("show");moveTip(ev);
 }
 function showAppLinkTip(ev,d){
@@ -3998,19 +4064,20 @@ function showAppLinkTip(ev,d){
 }
 
 function applyFilter(){
+  const related=new Set();
+  const matches=function(node){return curFilter==="app"?node.isApp:!node.isApp&&node.cat===curFilter;};
+  function edgeOpacity(d,normal,emphasis){
+    if(curFilter==="all")return normal;
+    if(hiddenArrowTypes.has(d.type)||!(matches(d.src)||matches(d.tgt)))return 0.03;
+    related.add(d.src.id);
+    related.add(d.tgt.id);
+    return emphasis;
+  }
+  if(coSel)coSel.attr("opacity",function(d){return edgeOpacity(d,0.72,0.9);});
+  if(apSel)apSel.attr("opacity",function(d){return edgeOpacity(d,0.55,0.8);});
   d3.selectAll(".ng").attr("opacity",function(d){
-    if(curFilter==="all")return 1;
-    if(curFilter==="app")return d.isApp?1:0.07;
-    return(!d.isApp&&d.cat===curFilter)?1:0.07;
-  });
-  if(coSel)coSel.attr("opacity",function(d){
-    if(curFilter==="all")return 0.72;
-    return(d.src&&(d.src.cat===curFilter||d.tgt.cat===curFilter))?0.9:0.03;
-  });
-  if(apSel)apSel.attr("opacity",function(d){
-    if(curFilter==="all")return 0.55;
-    if(curFilter==="app")return 0.8;
-    return(d.src&&d.src.cat===curFilter)?0.8:0.03;
+    if(curFilter==="all"||matches(d))return 1;
+    return related.has(d.id)?0.72:0.07;
   });
 }
 
@@ -4025,6 +4092,10 @@ function highlightNode(id,on){
 }
 
 // ═══ CONNECTION POPUP ════════════════════════════════
+function modelEvidence(relation){
+  return '<div><div class="poprl">Model relationship</div><div class="poprt">'+relation.why+'</div></div>'+
+    '<a class="tag" href="'+relation.source+'" target="_blank" rel="noopener">Source</a>';
+}
 function showPop(ev,d,isApp){
   let typeHTML,title,why,ag,bg,amt,dt;
   if(isApp){
@@ -4037,13 +4108,13 @@ function showPop(ev,d,isApp){
     amt=d.tgt?(d.tgt.val||"See panel"):"";dt=d.tgt?("Founded "+d.tgt.founded):"";
   } else {
     const cfg=LT[d.type];
-    typeHTML="<span style=\"font-size:8px;font-weight:800;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:"+cfg.c+";color:white\">"+cfg.lbl+"</span>";
+    typeHTML="<span style=\"font-size:8px;font-weight:800;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:"+cfg.c+";color:white\">"+(d.relation||cfg.lbl)+"</span>";
     title=(d.src?d.src.name:"")+"  →  "+(d.tgt?d.tgt.name:"");
     why=d.why;ag=d.ag;bg=d.bg;amt=d.amt;dt=d.dt;
   }
   document.getElementById("poptype").innerHTML=typeHTML;
   document.getElementById("poptit").textContent=title;
-  document.getElementById("popb").innerHTML=
+  document.getElementById("popb").innerHTML=d.source?modelEvidence(d):
     "<div><div class=\"poprl\">💡 Why did this happen?</div><div class=\"poprt\">"+why+"</div></div>"+
     "<div><div class=\"poprl\">What "+(d.src?d.src.name:"left side")+" gets</div><div class=\"poprt\">"+ag+"</div></div>"+
     "<div><div class=\"poprl\">What "+(d.tgt?d.tgt.name:"right side")+" gets</div><div class=\"poprt\">"+bg+"</div></div>"+
@@ -4069,7 +4140,7 @@ function showPanel(d){
   const myCoR=CO_RELS.filter(function(r){return r.s===d.id||r.t===d.id;});
   const myApR=APP_RELS.filter(function(r){return r.co===d.id||r.app===d.id;});
   const chainH=d.chain&&d.chain.length?"<div class=\"chain-box\"><div class=\"chain-lbl\">⛓ Connection chain , who powers what</div>"+d.chain.map(function(c,i){const n=nById?nById.get(c.id):null;const nm=n?n.name:c.id;return(i>0?"<div class=\"chain-role\">↓ "+c.role+"</div>":"")+"<div class=\"chain-step\"><div class=\"chain-dot\" style=\"background:"+c.col+"\"></div><span class=\"chain-nm\">"+nm+"</span></div>";}).join("")+"</div>":"";
-  const cH=myCoR.map(function(r){const isSrc=r.s===d.id;const oth=nById?nById.get(isSrc?r.t:r.s):null;if(!oth)return"";const cfg=LT[r.type]||{lbl:r.type};return"<div class=\"conn\" onclick=\"showPopFromPanel('"+r.s+"','"+r.t+"')\"><span class=\"ct "+r.type+"\">"+cfg.lbl+"</span><span style=\"color:#94a3b8;font-size:9px\">"+(isSrc?"→":"←")+"</span><span class=\"cn\">"+oth.name+"</span><span class=\"cd\">"+r.short+"</span><span class=\"cmore\">→</span></div>";}).join("");
+  const cH=myCoR.map(function(r){const isSrc=r.s===d.id;const oth=nById?nById.get(isSrc?r.t:r.s):null;if(!oth)return"";const cfg=LT[r.type]||{lbl:r.type};return"<div class=\"conn\" onclick=\"showPopFromPanel('"+r.s+"','"+r.t+"')\"><span class=\"ct "+r.type+"\">"+(r.relation||cfg.lbl)+"</span><span style=\"color:#94a3b8;font-size:9px\">"+(isSrc?"→":"←")+"</span><span class=\"cn\">"+oth.name+"</span><span class=\"cd\">"+r.short+"</span><span class=\"cmore\">→</span></div>";}).join("");
   const aH=myApR.map(function(r){const isCo=r.co===d.id;const oth=nById?nById.get(isCo?r.app:r.co):null;if(!oth)return"";const isO=r.type==="owns";return"<div class=\"conn\"><span class=\"ct "+r.type+"\">"+(isO?"Owns":"Powers")+"</span><span style=\"color:#94a3b8;font-size:9px\">"+(isCo?"→":"←")+"</span><span class=\"cn\">"+oth.name+"</span><span class=\"cd\">"+r.label+"</span></div>";}).join("");
   const piEl=document.getElementById("pi");
   const svgPi=document.createElementNS("http://www.w3.org/2000/svg","svg");
@@ -4079,7 +4150,7 @@ function showPanel(d){
   svgPi.appendChild(pg);piEl.innerHTML="";piEl.appendChild(svgPi);
   drawLogo(d3.select(pg),d.id,18);
   document.getElementById("pn").textContent=d.name;
-  document.getElementById("pm").textContent="Founded "+d.founded+" · "+d.hq;
+  document.getElementById("pm").textContent=[d.founded&&"Founded "+d.founded,d.hq].filter(Boolean).join(" · ");
   document.getElementById("pbw").innerHTML="<span class=\"pbdg\" style=\"background:"+(catC+"22")+";color:"+catC+";border-color:"+catC+"44\">"+(catLbl||cat)+"</span>";
   const modH=d.models&&d.models.length?"<div><div class=\"pst\"> AI Models</div><div class=\"trow\">"+d.models.map(function(m){return"<span class=\"tag m\">"+m+"</span>";}).join("")+"</div></div>":"";
   const prdH=d.products&&d.products.length?"<div><div class=\"pst\">🛠 Products</div><div class=\"trow\">"+d.products.map(function(p){return"<span class=\"tag\">"+p+"</span>";}).join("")+"</div></div>":"";
@@ -4090,7 +4161,7 @@ function showPanel(d){
     (d.url?"<a href=\""+d.url+"\" target=\"_blank\" rel=\"noopener\" class=\"visit-btn\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\"><path d=\"M7 17L17 7M17 7H7M17 7v10\"/></svg> Visit Website</a>":"")+
     chainH+
     "<div class=\"pbox\"><div class=\"pblbl\">💬 Plain English</div><div class=\"pbtxt\">"+d.plain+"</div>"+(d.youknow?"<div class=\"pbyk\">👀 Known for: <strong>"+d.youknow+"</strong></div>":"")+"</div>"+
-    "<div class=\"mrow\"><div class=\"mc\"><div class=\"ml\">Founded</div><div class=\"mv\">"+d.founded+"</div></div><div class=\"mc\"><div class=\"ml\">HQ</div><div class=\"mv\">"+d.hq+"</div></div><div class=\"mc w\"><div class=\"ml\">"+(d.valLabel||"Valuation / Market Cap")+"</div><div class=\"mv\">"+d.val+"</div></div></div>"+
+    (d.val?"<div class=\"mrow\"><div class=\"mc\"><div class=\"ml\">Founded</div><div class=\"mv\">"+d.founded+"</div></div><div class=\"mc\"><div class=\"ml\">HQ</div><div class=\"mv\">"+d.hq+"</div></div><div class=\"mc w\"><div class=\"ml\">"+(d.valLabel||"Valuation / Market Cap")+"</div><div class=\"mv\">"+d.val+"</div></div></div>":"")+
     (d.influence?"<div class=\"pbox\"><div class=\"pblbl\">Ecosystem influence</div><div class=\"pbtxt\">"+d.influence+"</div></div>":"")+
     pplH+prdH+modH+
     (d.sources&&d.sources.length?"<div><div class=\"pst\">Sources</div><div class=\"trow\">"+d.sources.map(function(source){
@@ -4114,9 +4185,9 @@ window.showPopFromPanel=function(s,t){
   if(!r||!nById)return;
   r.src=nById.get(s);r.tgt=nById.get(t);
   const cfg=LT[r.type]||{c:"#334155",lbl:r.type};
-  document.getElementById("poptype").innerHTML="<span style=\"font-size:8px;font-weight:800;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:"+cfg.c+";color:white\">"+cfg.lbl+"</span>";
+  document.getElementById("poptype").innerHTML="<span style=\"font-size:8px;font-weight:800;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:"+cfg.c+";color:white\">"+(r.relation||cfg.lbl)+"</span>";
   document.getElementById("poptit").textContent=(r.src?r.src.name:s)+"  →  "+(r.tgt?r.tgt.name:t);
-  document.getElementById("popb").innerHTML="<div><div class=\"poprl\">💡 Why?</div><div class=\"poprt\">"+r.why+"</div></div><div><div class=\"poprl\">What "+(r.src?r.src.name:s)+" gets</div><div class=\"poprt\">"+r.ag+"</div></div><div><div class=\"poprl\">What "+(r.tgt?r.tgt.name:t)+" gets</div><div class=\"poprt\">"+r.bg+"</div></div><div style=\"display:flex;gap:6px;flex-wrap:wrap\"><span class=\"popamt\">"+r.amt+"</span><span class=\"popamt\">📅 "+r.dt+"</span></div>";
+  document.getElementById("popb").innerHTML=r.source?modelEvidence(r):"<div><div class=\"poprl\">💡 Why?</div><div class=\"poprt\">"+r.why+"</div></div><div><div class=\"poprl\">What "+(r.src?r.src.name:s)+" gets</div><div class=\"poprt\">"+r.ag+"</div></div><div><div class=\"poprl\">What "+(r.tgt?r.tgt.name:t)+" gets</div><div class=\"poprt\">"+r.bg+"</div></div><div style=\"display:flex;gap:6px;flex-wrap:wrap\"><span class=\"popamt\">"+r.amt+"</span><span class=\"popamt\">📅 "+r.dt+"</span></div>";
   POP.style.left="50%";POP.style.top="50%";POP.style.transform="translate(-50%,-50%)";
   POP.classList.add("show");
 };
@@ -4145,7 +4216,10 @@ function startViz(){
   mkG("gm",4);mkG("gl",10);
   // Arrow markers
   function mkA(id,c,w,h){defs.append("marker").attr("id","a-"+id).attr("viewBox","0 0 10 10").attr("refX",0).attr("refY",5).attr("markerWidth",w).attr("markerHeight",h).attr("orient","auto").append("path").attr("d","M0,0L10,5L0,10z").attr("fill",c);}
-  mkA("investment","#f59e0b",11,11);mkA("partnership","#0891b2",9,9);mkA("alumni","#6b7280",8,8);mkA("owns","#1d4ed8",10,10);mkA("powers","#16a34a",9,9);
+  Object.entries(LT).forEach(function([type,style]){
+    const size=type==="investment"?11:type==="owns"?10:type==="alumni"?8:9;
+    mkA(type,style.c,size,size);
+  });
   // ClipPaths for real logo images
   allData.forEach(function(d){
     if(LOGOS[d.id]){
@@ -4168,8 +4242,8 @@ function startViz(){
   const ZONES=[
     {lbl:"COMPUTE HARDWARE , Nvidia GPUs · AMD · CoreWeave",                                              y1:0,     y2:.086,  c:"#0f172a"},
     {lbl:"BIG TECH COMPANIES , Microsoft · Google · Amazon · Meta · Apple",                               y1:.088,  y2:.176,  c:"#1e3a8a"},
-    {lbl:"CLOUD INFRASTRUCTURE , AWS · Azure · Google Cloud",                                             y1:.178,  y2:.256,  c:"#312e81"},
-    {lbl:"FOUNDATION AI MODELS , OpenAI · Anthropic · xAI · Mistral · Cohere · SSI  +   CHINESE AI",  y1:.258,  y2:.450,  c:"#4c1d95"},
+    {lbl:"CLOUD INFRASTRUCTURE AND MODEL HOSTING",                                             y1:.178,  y2:.256,  c:"#312e81"},
+    {lbl:"FOUNDATION MODEL DEVELOPERS · INCLUDING CHINESE AI LABS",  y1:.258,  y2:.450,  c:"#4c1d95"},
     {lbl:"SPECIALIZED AI + PLATFORMS , Midjourney · Runway · ElevenLabs · Hugging Face · Perplexity · Thinking Machines · OpenRouter",     y1:.452,  y2:.528,  c:"#5b21b6"},
     {lbl:"CODING & DEVELOPER TOOLS , GitHub Copilot · Cursor · Windsurf · Replit",                       y1:.530,  y2:.608,  c:"#1e40af"},
     {lbl:"ENTERPRISE AI APPLICATIONS , Salesforce · HubSpot · Adobe · Oracle · SAP · ServiceNow",        y1:.610,  y2:.692,  c:"#065f46"},
@@ -4340,6 +4414,27 @@ function startViz(){
   valueSelect.addEventListener("change",applyValueMode);
 
   // ── FILTERS ─────────────────────────────────────────
+  const arrowFilters=document.getElementById("arrow-filters");
+  Object.entries(LT).forEach(function([type,style]){
+    const button=document.createElement("button");
+    button.type="button";
+    button.className="arrow-filter";
+    button.dataset.type=type;
+    button.setAttribute("aria-pressed","true");
+    button.innerHTML='<svg width="24" height="10" aria-hidden="true"><line x1="0" y1="5" x2="19" y2="5" stroke="'+style.c+'" stroke-width="'+style.w+'"'+(style.dash?' stroke-dasharray="'+style.dash+'"':'')+'></line><polygon points="18,2 24,5 18,8" fill="'+style.c+'"></polygon></svg>'+style.lbl;
+    button.addEventListener("click",function(){
+      const visible=!hiddenArrowTypes.has(type);
+      if(visible)hiddenArrowTypes.add(type);else hiddenArrowTypes.delete(type);
+      button.setAttribute("aria-pressed",String(!visible));
+      const matches=function(d){return d.type===type;};
+      coSel.filter(matches).attr("display",visible?"none":null);
+      apSel.filter(matches).attr("display",visible?"none":null);
+      applyFilter();
+      hideTip();
+      closePop();
+    });
+    arrowFilters.appendChild(button);
+  });
   document.querySelectorAll(".fb").forEach(function(btn){
     btn.addEventListener("click",function(){
       document.querySelectorAll(".fb").forEach(function(b){b.classList.remove("act");});
@@ -4446,8 +4541,9 @@ function setupSearch(){
   if(box.dataset.ready)return;            // guard against re-init
   box.dataset.ready="1";
 
-  const INDEX=COS.map(function(c){return{id:c.id,name:c.name,cat:c.cat};})
-    .concat(APPS.map(function(a){return{id:a.id,name:a.name,cat:a.cat};}));
+  const INDEX=[...COS,...APPS].map(function(node){
+    return {id:node.id,name:node.name,cat:node.cat,terms:[...(node.aliases||[]),...(node.models||[])].map(function(term){return term.toLowerCase();})};
+  });
   input.placeholder="Search "+INDEX.length+" companies & apps\u2026";
 
   let matches=[], active=-1;
@@ -4462,7 +4558,11 @@ function setupSearch(){
     INDEX.forEach(function(it){
       const nm=it.name.toLowerCase(), lbl=catLabel(it.cat).toLowerCase();
       let s=-1;
-      if(nm===q)s=0; else if(nm.indexOf(q)===0)s=1; else if(nm.indexOf(q)>-1)s=2; else if(lbl.indexOf(q)>-1)s=4;
+      if(nm===q)s=0;
+      else if(nm.startsWith(q))s=1;
+      else if(nm.includes(q)||it.terms.includes(q))s=2;
+      else if(it.terms.some(function(term){return term.includes(q);}))s=3;
+      else if(lbl.includes(q))s=4;
       if(s>=0)out.push({it:it,s:s});
     });
     out.sort(function(a,b){return a.s-b.s||a.it.name.localeCompare(b.it.name);});
@@ -4581,7 +4681,7 @@ document.addEventListener('keydown',function(e){
 document.addEventListener('click',function(e){
   const wrap=document.querySelector('.map-wrap');
   const gate=document.getElementById('map-gate');
-  if(gate&&gate.classList.contains('gone')&&wrap&&!wrap.contains(e.target)&&!wrap.classList.contains('map-fullscreen')){
+  if(gate&&gate.classList.contains('gone')&&wrap&&!wrap.contains(e.target)&&!POP.contains(e.target)&&!wrap.classList.contains('map-fullscreen')){
     deactivateMap();
   }
 });
